@@ -4,11 +4,9 @@ var express = require("express");
 var cat_route_1 = require("./cats/cat.route");
 var Server = (function () {
     function Server() {
-    }
-    Server.prototype.constructore = function () {
         var app = express();
         this.app = app;
-    };
+    }
     Server.prototype.setRoute = function () {
         this.app.use(cat_route_1.default);
     };
@@ -33,5 +31,9 @@ var Server = (function () {
     };
     return Server;
 }());
-function init() { }
+function init() {
+    var server = new Server();
+    server.listen();
+}
+init();
 //# sourceMappingURL=app.js.map

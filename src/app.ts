@@ -4,7 +4,7 @@ import catsRouter from './cats/cat.route';
 class Server {
   public app: express.Application;
 
-  constructore() {
+  constructor() {
     const app: express.Application = express();
     this.app = app;
   }
@@ -43,6 +43,10 @@ class Server {
   }
 }
 
-function init() {}
+function init() {
+  const server = new Server();
+  server.listen();
+}
 
+init();
 // const app: express.Express = express();
